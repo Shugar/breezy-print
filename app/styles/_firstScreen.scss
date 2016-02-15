@@ -1,0 +1,50 @@
+.firstScreen {
+  color: #fff;
+
+  &-steOne {
+    display: block;
+  }
+
+  &-stepTwo {
+    display: none;
+  }
+
+  &-dropzone {
+    background: rgba(255,255,255,0.95) !important;
+    color: #000;
+    text-align: center;
+    font-size: 35px;
+    cursor: pointer;
+    width: 100%;
+    border: none !important;
+  }
+
+  &-dropzone > .dz-message {
+    color: #000;
+    font-size: 26px;
+    margin: 70px 0;
+  }
+
+  &-secure a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px #fff solid;
+    padding: 10px 0 1px 0;
+    display: inline-block;
+  }
+
+  &-secureText {
+    font-size: 15px;
+    margin-top: 25px;
+    line-height: 20px;
+  }
+
+  &-input {
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    padding: 15px 20px;
+    color: #000;
+    outline: none;
+  }
+}

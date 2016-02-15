@@ -1,0 +1,27 @@
+.firstScreen#start
+  .container
+    .firstScreen-stepOne
+      .title
+        | Step 1: Upload your Document
+
+      .firstScreen-dragAndDrop
+        form(action='~/print' class='firstScreen-dropzone dropzone' method="POST" enctype="multipart/form-data")
+          div(class='fallback')
+            input(type='file' id="docUpload" class='dropzone' name="file" multiple)
+
+      .button.stepOneButton
+        | Next
+        
+    .firstScreen-stepTwo
+      .title
+        | Step 2: Enter your Email Address
+      
+      input(class='firstScreen-input' type='text' placeholder='your@yourcompany.org')
+      .firstScreen-secure
+        .firstScreen-secureText
+          | All documents are encrypted both in transit and at rest, and are deleted immediately upon printing.
+        a(href='#')
+          | Learn more about security.
+      
+      .button#btn-start-next
+        | Next
