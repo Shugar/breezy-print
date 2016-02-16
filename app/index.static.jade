@@ -13,7 +13,6 @@ head
 
   script.
     require('initialize');
-    
     $(document).ready(function() {
       function move() {
           var elem = document.getElementById('progress-line')
@@ -44,5 +43,6 @@ head
 
 body
   include _includes/header.jade
-  include _includes/firstScreen.jade
-  include _includes/secondScreen.jade
+  form(action='~/print' method="POST" enctype="multipart/form-data")
+    include _includes/firstScreen.jade
+    include _includes/secondScreen.jade

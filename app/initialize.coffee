@@ -1,4 +1,11 @@
 $(document).ready ->
+
+  Dropzone.autoDiscover = false;
+
+  $(".firstScreen-dropzone").dropzone({
+    url: "/file/post"
+  });
+
   $('.stepOneButton').click ->
     $('.firstScreen-stepOne').hide()
     $('.firstScreen-stepTwo').show()

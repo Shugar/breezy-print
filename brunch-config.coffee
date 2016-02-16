@@ -10,11 +10,11 @@ exports.config =
       joinTo: 'stylesheets/app.css'
 
     templates:
-      joinTo: 'javascripts/app.js': /.+\.jade$/
+      joinTo: 'javascripts/templates.js'
 
   plugins:
     jade:
-      pretty: no # Adds pretty-indentation whitespaces to output (false by default)
+      pretty: true # Adds pretty-indentation whitespaces to output (false by default)
 
     static_jade:                        # all optionals
       extension:  ".static.jade"        # static-compile each file with this extension in `assets`

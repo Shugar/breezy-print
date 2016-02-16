@@ -3,11 +3,8 @@
     .firstScreen-stepOne
       .title
         | Step 1: Upload your Document
-
       .firstScreen-dragAndDrop
-        form(action='~/print' class='firstScreen-dropzone dropzone' method="POST" enctype="multipart/form-data")
-          div(class='fallback')
-            input(type='file' id="docUpload" class='dropzone' name="file" multiple)
+        .firstScreen-dropzone.dropzone
 
       .button.stepOneButton
         | Next
