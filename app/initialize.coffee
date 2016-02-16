@@ -11,11 +11,19 @@ $(document).ready ->
     $('.firstScreen-stepOne').hide()
     $('.firstScreen-stepTwo').show()
 
-  $('.secondScreen-back').click ->
+  $('.firstScreen-back').click ->
     $('.firstScreen-stepTwo').hide()
     $('.firstScreen-stepOne').show()
+
+  $('.secondScreen-back').click ->
     $('#release').hide()
     $('#start').show()
+
+  $('.secondScreen-printerChange').click ->
+    $('.secondScreen-printerStepTwo').hide()
+    $('.secondScreen-printerStepOne').show()
+    $('.secondScreen-print').removeClass('secondScreen-printActive')
+    $('.secondScreen-next').show()
 
   $('.secondScreen-next').click ->
     $('.secondScreen-printerStepOne').hide()
