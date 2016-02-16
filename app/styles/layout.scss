@@ -127,6 +127,15 @@ input[type=radio]+.lbl::before {
     min-width: 14px;
 }
 
+input[type=radio]+.lbl::before {
+  height: 8px;
+  width: 8px;
+  min-width: auto;
+  margin-right: 7px;
+  border: 4px #fff solid;
+}
+
 input[type=radio]:checked+.lbl::before {
-		content: "•";
+		background: #3498db;
+    content: '';
 }
