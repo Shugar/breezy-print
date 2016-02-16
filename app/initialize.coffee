@@ -4,6 +4,7 @@ $(document).ready ->
 
   $(".firstScreen-dropzone").dropzone({
     url: "/file/post"
+    autoProcessQueue: false
   });
 
   $('.stepOneButton').click ->
