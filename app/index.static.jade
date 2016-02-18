@@ -5,14 +5,14 @@ head
   meta(name="viewport" content="width=device-width")
   meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
   link(rel="stylesheet" href="stylesheets/app.css")
-
   link(rel="icon" href="images/favicon.png")
 
   script(src="javascripts/vendor.js")
   script(src="javascripts/app.js")
 
   script.
-    require('initialize');
+    require('scripts/initialize');
+      
     $(document).ready(function() {
       function move() {
           var elem = document.getElementById('progress-line')
@@ -42,7 +42,7 @@ head
     });
 
 body
-  include _includes/header.jade
+  include partials/header.jade
   form(action='~/print' method="POST" enctype="multipart/form-data")
-    include _includes/firstScreen.jade
-    include _includes/secondScreen.jade
+    include partials/firstScreen.jade
+    include partials/secondScreen.jade

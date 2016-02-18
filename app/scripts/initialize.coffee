@@ -1,11 +1,6 @@
 $(document).ready ->
 
-  Dropzone.autoDiscover = false;
-
-  $(".firstScreen-dropzone").dropzone({
-    url: "/file/post"
-    autoProcessQueue: false
-  });
+  $('.dropify').dropify();
 
   $('.stepOneButton').click ->
     $('.firstScreen-stepOne').hide()
