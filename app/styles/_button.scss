@@ -5,6 +5,7 @@
   margin-top: 50px;
   user-select: none;
   padding: 10px 40px;
+  color: #fff;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.1s ease;
@@ -13,4 +14,9 @@
 .button:hover {
   background: #fff;
   color: #000;
+}
+
+.button-disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
