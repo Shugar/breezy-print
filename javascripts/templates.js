@@ -209,5 +209,25 @@ if (typeof define === 'function' && define.amd) {
 }
 });
 
+;require.register("showcase.static", function(exports, require, module) {
+var __templateData = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+var jade_indent = [];
+buf.push("<!DOCTYPE html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <title>Breezy Print</title>\n  <meta name=\"viewport\" content=\"width=device-width\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n  <link rel=\"stylesheet\" href=\"stylesheets/app.css\">\n  <link rel=\"icon\" href=\"images/favicon.png\">\n</head>\n<body> \n  <div class=\"container\">\n    <div class=\"case\">\n      <div class=\"title\">Title</div>\n    </div>\n    <div class=\"case\">\n      <div class=\"button\">Button</div>\n    </div>\n    <div class=\"case\">\n      <div class=\"button button-disabled\">Button</div>\n    </div>\n  </div>\n</body>");;return buf.join("");
+};
+if (typeof define === 'function' && define.amd) {
+  define([], function() {
+    return __templateData;
+  });
+} else if (typeof module === 'object' && module && module.exports) {
+  module.exports = __templateData;
+} else {
+  __templateData;
+}
+});
+
 ;
 //# sourceMappingURL=templates.js.map

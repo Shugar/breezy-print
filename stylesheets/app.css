@@ -1279,7 +1279,8 @@ table {
 .title {
   font-size: 40px;
   font-weight: 700;
-  padding: 0 0 50px 0; }
+  padding: 0 0 50px 0;
+  color: #fff; }
 
 /* line 1, /Users/tumasov/Developer/breezy-print/app/styles/_button.scss */
 .button {
@@ -1292,15 +1293,21 @@ table {
       -ms-user-select: none;
           user-select: none;
   padding: 10px 40px;
+  color: #fff;
   text-transform: uppercase;
   cursor: pointer;
   -webkit-transition:all 0.1s ease;
   transition: all 0.1s ease; }
 
-/* line 13, /Users/tumasov/Developer/breezy-print/app/styles/_button.scss */
+/* line 14, /Users/tumasov/Developer/breezy-print/app/styles/_button.scss */
 .button:hover {
   background: #fff;
   color: #000; }
+
+/* line 19, /Users/tumasov/Developer/breezy-print/app/styles/_button.scss */
+.button-disabled {
+  opacity: 0.6;
+  pointer-events: none; }
 
 /* line 1, /Users/tumasov/Developer/breezy-print/app/styles/_header.scss */
 .Header {
