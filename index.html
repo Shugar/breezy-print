@@ -9,7 +9,8 @@
   <script src="javascripts/vendor.js"></script>
   <script src="javascripts/app.js"></script>
   <script>
-    require('initialize');
+    require('scripts/initialize');
+      
     $(document).ready(function() {
       function move() {
           var elem = document.getElementById('progress-line')
@@ -52,7 +53,7 @@
         <div class="firstScreen-stepOne">
           <div class="title">Step 1: Upload your Document</div>
           <div class="firstScreen-dragAndDrop">
-            <div class="firstScreen-dropzone dropzone"></div>
+            <input type="file" class="dropify">
           </div>
           <div class="button stepOneButton">Next</div>
         </div>
