@@ -111,7 +111,34 @@
 })();
 require.register("scripts/initialize", function(exports, require, module) {
 $(document).ready(function() {
+  var validateEmail;
+  validateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   $('.dropify').dropify();
+  $('.dropify').change(function() {
+    if ($(this).val() !== '') {
+      return $('.stepOneButton').removeClass('button-disabled');
+    }
+  });
+  $('.firstScreen-input').on('input', function() {
+    if ($(this).val() === '') {
+      $('#btn-start-next').addClass('button-disabled');
+    }
+    if ($(this).val().match(validateEmail)) {
+      return $('#btn-start-next').removeClass('button-disabled');
+    }
+  });
+  $('.secondScreen-printerInputValue').on('input', function() {
+    $('.secondScreen-next').addClass('button-disabled');
+    if ($(this).val() !== '') {
+      return $('.secondScreen-next').removeClass('button-disabled');
+    }
+  });
+  $('.secondScreen-form [type="text"]').on('input', function() {
+    $('.secondScreen-print').addClass('button-disabled');
+    if ($(this).val() !== '') {
+      return $('.secondScreen-print').removeClass('button-disabled');
+    }
+  });
   $('.stepOneButton').click(function() {
     $('.firstScreen-stepOne').hide();
     return $('.firstScreen-stepTwo').show();
