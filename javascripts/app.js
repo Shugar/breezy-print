@@ -110,9 +110,13 @@
   globals.require = require;
 })();
 require.register("scripts/initialize", function(exports, require, module) {
+var validateEmail, validatePages;
+
+validateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+validatePages = /\W*(All|all)\W*|^(\s*\d+\s*\-\s*\d+\s*,?|\s*\d+\s*,?)+$/;
+
 $(document).ready(function() {
-  var validateEmail;
-  validateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   $('.dropify').dropify();
   $('.dropify').change(function() {
     if ($(this).val() !== '') {
@@ -136,6 +140,12 @@ $(document).ready(function() {
   $('.secondScreen-form [type="text"]').on('input', function() {
     $('.secondScreen-print').addClass('button-disabled');
     if ($(this).val() !== '') {
+      return $('.secondScreen-print').removeClass('button-disabled');
+    }
+  });
+  $('.secondScreen-pagesToPrint').on('input', function() {
+    $('.secondScreen-print').addClass('button-disabled');
+    if ($(this).val().match(validatePages)) {
       return $('.secondScreen-print').removeClass('button-disabled');
     }
   });

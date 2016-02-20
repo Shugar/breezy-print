@@ -33,6 +33,7 @@
       }
       
       $('.secondScreen-print').click(function() {
+        $('.secondScreen-printerChange').hide();
         $('.secondScreen-buttons').hide();
         $('.progress').show();
         move()
@@ -109,7 +110,7 @@
               </div>
               <div class="secondScreen-formSectionThree">
                 <label>Pages to Print
-                  <input type="text" value="All" placeholder="All or Range like 1-5,7" class="secondScreen-pagesToPrint">
+                  <input type="text" value="All" placeholder="All or Range like 1-5, 7-8" class="secondScreen-pagesToPrint">
                 </label>
                 <label>Copies
                   <input type="text" value="1" class="secondScreen-copies">
