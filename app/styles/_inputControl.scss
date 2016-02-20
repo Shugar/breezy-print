@@ -1,0 +1,28 @@
+.inputControl {
+
+  & > label {
+    font-size: 15px;
+    display: block;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  & > input {
+    margin-top: 7px;
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    display: block;
+    padding: 15px 20px;
+    color: #000;
+    outline: none;
+    background: #fff;
+  }
+
+  &-disabled > input {
+    background: #EAEAEA;
+    pointer-events: none;
+    opacity: 0.8;
+    user-select: none;
+  }
+}

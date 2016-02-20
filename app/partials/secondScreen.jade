@@ -27,9 +27,7 @@
         .secondScreen-printerTitle
           | Enter Shortcode to Find A Printer
         .secondScreen-printerInput
-          input(type="text" id="txt-shortcode" placeholder='Shortcode')
-          .button.secondScreen-validate
-            | Validate
+          input(type="text" class="secondScreen-printerInputValue" id="txt-shortcode" placeholder='Shortcode')
             
       .secondScreen-printerStepTwo
         .secondScreen-printerTitle
@@ -62,10 +60,10 @@
           .secondScreen-formSectionThree
             label
               | Pages to Print
-              input(type="text" pattern="\d{1,5}" placeholder='1-5')
+              input(type="text" class='secondScreen-pagesToPrint' value='All' placeholder='All or Range like 1-5, 7-8')
             label
               | Copies
-              input(type="text" pattern="\d{1,5}" placeholder='1-5')
+              input(type="text" class='secondScreen-copies' value='1')
               
       
     .secondScreen-stepThree(style='display: none')
@@ -78,7 +76,7 @@
         | BACK
       .button.secondScreen-cancel
         | Cancel Job
-      .button.secondScreen-next
+      .button.secondScreen-next.button-disabled
         | NEXT
       .button.secondScreen-print
         | PRINT

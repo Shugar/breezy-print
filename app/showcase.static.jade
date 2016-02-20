@@ -7,7 +7,7 @@ head
   link(rel="stylesheet" href="stylesheets/app.css")
   link(rel="icon" href="images/favicon.png")
 
-body 
+body.showcase
   .container
     .case
       .title
@@ -19,4 +19,16 @@ body
         
     .case
       .button.button-disabled
-        | Button
+        | Button disabled
+        
+    .case
+      .inputControl
+        label Input with label
+        input(placeholder='Your name')
+    
+    .case
+      .inputControl.inputControl-disabled
+        label Disabled input
+        input(placeholder='Your name')
+          
+        

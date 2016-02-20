@@ -33,6 +33,7 @@
       }
       
       $('.secondScreen-print').click(function() {
+        $('.secondScreen-printerChange').hide();
         $('.secondScreen-buttons').hide();
         $('.progress').show();
         move()
@@ -55,7 +56,7 @@
           <div class="firstScreen-dragAndDrop">
             <input type="file" class="dropify">
           </div>
-          <div class="button stepOneButton">Next</div>
+          <div class="button stepOneButton button-disabled">Next</div>
         </div>
         <div class="firstScreen-stepTwo">
           <div class="title">Step 2: Enter your Email Address</div>
@@ -64,7 +65,7 @@
             <div class="firstScreen-secureText">All documents are encrypted both in transit and at rest, and are deleted immediately upon printing.</div><a href="#">Learn more about security.</a>
           </div>
           <div class="button firstScreen-back">BACK</div>
-          <div id="btn-start-next" class="button">Next</div>
+          <div id="btn-start-next" class="button button-disabled">Next</div>
         </div>
       </div>
     </div>
@@ -83,8 +84,7 @@
           <div class="secondScreen-printerStepOne">
             <div class="secondScreen-printerTitle">Enter Shortcode to Find A Printer</div>
             <div class="secondScreen-printerInput">
-              <input type="text" id="txt-shortcode" placeholder="Shortcode">
-              <div class="button secondScreen-validate">Validate</div>
+              <input type="text" id="txt-shortcode" placeholder="Shortcode" class="secondScreen-printerInputValue">
             </div>
           </div>
           <div class="secondScreen-printerStepTwo">
@@ -110,10 +110,10 @@
               </div>
               <div class="secondScreen-formSectionThree">
                 <label>Pages to Print
-                  <input type="text" pattern="d{1,5}" placeholder="1-5">
+                  <input type="text" value="All" placeholder="All or Range like 1-5, 7-8" class="secondScreen-pagesToPrint">
                 </label>
                 <label>Copies
-                  <input type="text" pattern="d{1,5}" placeholder="1-5">
+                  <input type="text" value="1" class="secondScreen-copies">
                 </label>
               </div>
             </div>
@@ -128,7 +128,7 @@
         <div class="secondScreen-buttons">
           <div class="button secondScreen-back">BACK</div>
           <div class="button secondScreen-cancel">Cancel Job</div>
-          <div class="button secondScreen-next">NEXT</div>
+          <div class="button secondScreen-next button-disabled">NEXT</div>
           <div class="button secondScreen-print">PRINT</div>
         </div>
         <div class="progress">

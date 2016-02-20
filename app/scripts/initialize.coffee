@@ -1,10 +1,38 @@
-$(document).ready ->
+validateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+validatePages = /\W*(All|all)\W*|^(\s*\d+\s*\-\s*\d+\s*,?|\s*\d+\s*,?)+$/
 
+$(document).ready ->
   $('.dropify').dropify();
 
+  $('.dropify').change ->
+    if $(this).val() != ''
+      $('.stepOneButton').removeClass('button-disabled')
+
+  $('.firstScreen-input').on 'input', ->
+    if $(this).val() == ''
+      $('#btn-start-next').addClass('button-disabled')
+
+    if $(this).val().match validateEmail
+      $('#btn-start-next').removeClass('button-disabled')
+
+  $('.secondScreen-printerInputValue').on 'input', ->
+    $('.secondScreen-next').addClass('button-disabled')
+    if $(this).val() != ''
+      $('.secondScreen-next').removeClass('button-disabled')
+
+  $('.secondScreen-form [type="text"]').on 'input', ->
+    $('.secondScreen-print').addClass('button-disabled')
+    if $(this).val() != ''
+      $('.secondScreen-print').removeClass('button-disabled')
+
+  $('.secondScreen-pagesToPrint').on 'input', ->
+    $('.secondScreen-print').addClass('button-disabled')
+    if $(this).val().match(validatePages)
+      $('.secondScreen-print').removeClass('button-disabled')
+
   $('.stepOneButton').click ->
-    $('.firstScreen-stepOne').hide()
-    $('.firstScreen-stepTwo').show()
+      $('.firstScreen-stepOne').hide()
+      $('.firstScreen-stepTwo').show()
 
   $('.firstScreen-back').click ->
     $('.firstScreen-stepTwo').hide()
