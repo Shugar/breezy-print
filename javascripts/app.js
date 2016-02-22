@@ -117,7 +117,9 @@ validateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(
 validatePages = /\W*(All|all)\W*|^(\s*\d+\s*\-\s*\d+\s*,?|\s*\d+\s*,?)+$/;
 
 $(document).ready(function() {
-  $('.dropify').dropify();
+  $('.dropify').dropify({
+    allowedFileExtensions: ['pdf', 'jpg', 'png']
+  });
   $('.dropify').change(function() {
     if ($(this).val() !== '') {
       return $('.stepOneButton').removeClass('button-disabled');
