@@ -6,9 +6,14 @@ $(document).ready ->
      allowedFileExtensions: ['pdf', 'jpg', 'png']
   });
 
-  $('.dropify').change ->
-    if $(this).val() != ''
-      $('.stepOneButton').removeClass('button-disabled')
+  $('.dropify')
+    .change ->
+      if $(this).val() != ''
+        $('.stepOneButton').removeClass('button-disabled')
+
+    .on 'dropify.afterClear', ->
+      if $(this).val() == ''
+        $('.stepOneButton').addClass('button-disabled')
 
   $('.firstScreen-input').on 'input', ->
     if $(this).val() == ''
