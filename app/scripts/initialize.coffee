@@ -2,7 +2,9 @@ validateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(
 validatePages = /\W*(All|all)\W*|^(\s*\d+\s*\-\s*\d+\s*,?|\s*\d+\s*,?)+$/
 
 $(document).ready ->
-  $('.dropify').dropify();
+  $('.dropify').dropify({
+     allowedFileExtensions: ['pdf', 'jpg', 'png']
+  });
 
   $('.dropify').change ->
     if $(this).val() != ''
