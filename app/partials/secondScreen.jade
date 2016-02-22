@@ -14,11 +14,11 @@
           | Email: 
           span juser@weil.com
           
-        .secondScreen-infoModified
+        .secondScreen-fileinfo
           | Modified: 
           span Jan 26, 2016
           
-        .secondScreen-infoSize
+        .secondScreen-fileinfo
           | File size: 
           span 2.525 kb
 
@@ -28,7 +28,10 @@
           | Enter Shortcode to Find A Printer
         .secondScreen-printerInput
           input(type="text" class="secondScreen-printerInputValue" id="txt-shortcode" placeholder='Shortcode')
-            
+      
+      .secondScreen-printerLoader
+        img(src='images/ring.svg')
+
       .secondScreen-printerStepTwo
         .secondScreen-printerTitle
           img(src='images/printer.svg')

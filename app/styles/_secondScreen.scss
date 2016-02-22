@@ -3,6 +3,7 @@
   display: none;
 
   &-printerStepOne,
+  &-printerLoader
   &-printerStepTwo {
     border: 2px #fff solid;
     padding: 25px;
@@ -106,8 +107,7 @@
   }
 
   &-infoOwned,
-  &-infoModified,
-  &-infoSize {
+  &-fileinfo {
     font-size: 15px;
     line-height: 24px;
 
@@ -168,6 +168,7 @@
     }
   }
 
+  &-printerLoader,
   &-printerStepTwo {
     display: none;
   }
