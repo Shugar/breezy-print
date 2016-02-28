@@ -1,6 +1,10 @@
 validateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 validatePages = /\W*(All|all)\W*|^(\s*\d+\s*\-\s*\d+\s*,?|\s*\d+\s*,?)+$/
 
+$(window).load ->
+  $(".status").fadeOut();
+  $(".preloader").delay(1000).fadeOut("slow");
+
 $(document).ready ->
   $('.dropify').dropify({
      allowedFileExtensions: ['pdf', 'jpg', 'png']
